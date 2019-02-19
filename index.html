@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tap it</title>
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			cursor: url('assets/cursor.png') 64 64, default;
+		}
+		body {
+			overflow: hidden;
+			font-family: 'Share Tech Mono';
+		}
+		.gameInfo {
+			position: absolute;
+			text-transform: uppercase;
+			font-size: 28px;
+			top: 2%;
+			left: 2%;
+			width: 96%;
+			display: grid;
+    		grid-template-columns: 50% 50%;
+		}
+		.time {
+			text-align: right;
+		}
+		.endWindow,
+		.startingWindow {
+			width: 100%;
+		    height: 100%;
+		    background-color: rgba(0,0,0,0.8);
+		    position: absolute;
+		    color: white;
+		    display: grid;
+		    align-items: center;
+		    justify-items: center;
+		    text-align: center;
+		    transition: opacity 300ms ease-out;
+		    opacity: 0;
+			visibility: hidden;
+		}
+		.open {
+			visibility: visible;
+			opacity: 1;
+		}
+		.startingWindow h1 {
+			font-size: 50px;
+			margin-bottom: 20px;
+		}
+		.endWindow button,
+		.startingWindow button {
+		    width: 200px;
+		    height: 40px;
+		    border: none;
+		    margin-top: 80px;
+		    font-family: 'Share Tech Mono';
+		    background-color: #eac11e;
+		    font-size: 18px;
+		    letter-spacing: 2px;
+		    text-transform: uppercase;
+		    outline: none;
+		}
+		.endWindow button:hover,
+		.startingWindow button:hover {
+			background-color: #d8b21c;
+		}
+		.endWindow h2 {
+			margin-top: 20px;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="gameInfo">
+		<div class="score">
+			Score: <span id="score">0</span>
+		</div>
+		<div class="time">
+			Time left: <span id="time">30</span>
+		</div>
+	</div>
+
+	<div class="startingWindow open">
+		<div class="starting-container">
+			<h1>Swift-Click</h1>
+			<div class="desc">
+				Click as many circles as you can in 30 seconds!
+			</div>
+			<button id="start">Begin</button>
+		</div>
+	</div>
+
+	<div class="endWindow">
+		<div class="end-container">
+			<div class="desc">Your score is:</div>
+			<h2 id="finalScore"></h2>
+			<button id="replay">Play again</button>
+		</div>
+	</div>
+
+	<script src="p5/p5.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
