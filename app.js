@@ -56,7 +56,6 @@ function mouseClicked() {
 
 		if (distanceFromCenter <= circleRadius) {
 			// You sniped the circle!
-
 			clear();
 			score += 1;
 			scoreEl.innerHTML = score.toFixed(1); 
@@ -75,7 +74,7 @@ function mouseClicked() {
 		}
 	}
 
-	if (paused) {
+	if (paused) { // run this on first click at the start
 		circleRadius = c.size/2;
 		distanceFromCenter = Math.sqrt( Math.pow(c.x - mouseX, 2) + Math.pow(c.y - mouseY, 2) );
 
@@ -117,6 +116,7 @@ startBtn.addEventListener('click', function() {
 	document.querySelector('.startingWindow').classList.remove('open');
 	paused = true;
 });
+
 
 var replayBtn = document.getElementById('replay');
 
