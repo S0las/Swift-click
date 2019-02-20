@@ -16,11 +16,11 @@ var tapSound = new Audio('assets/tick.mp3');
 var paused = false;
 var started = false;
 
-if (Math.floor(screenWidth/10) > 100) {
+if (Math.floor(screenWidth/10) > 80) {
 	var c = new Circle(Math.floor(screenWidth/10));
 }
 else {
-	var c = new Circle(100);
+	var c = new Circle(80);
 }
 
 function setup() {
