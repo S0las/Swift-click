@@ -48,7 +48,7 @@ function draw() {
 	}
 }
 
-function mouseClicked() {
+function touchEnded() {
 
 	if (time > 0) {
 		circleRadius = c.size/2;
@@ -69,7 +69,9 @@ function mouseClicked() {
 		}
 		else {
 			// YOU MISSED!
-			score -= 0.3;
+			if (score >= 0.3) {
+				score -= 0.3;
+			}
 			scoreEl.innerHTML = score.toFixed(1);
 		}
 	}
